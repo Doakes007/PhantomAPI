@@ -1,0 +1,7 @@
+{"timestamp": "2026-01-06T09:50:08.688131", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1602.21, "client_ip": "127.0.0.1", "payload_size": 0}
+{"timestamp": "2026-01-06T09:50:10.182737", "method": "GET", "endpoint": "/favicon.ico", "status": 404, "latency_ms": 1454.55, "client_ip": "127.0.0.1", "payload_size": 0}
+{"timestamp": "2026-01-06T09:51:15.825364", "method": "GET", "endpoint": "/ip", "status": 200, "latency_ms": 1362.45, "client_ip": "127.0.0.1", "payload_size": 0}
+{"timestamp": "2026-01-06T09:51:38.357570", "method": "GET", "endpoint": "/uuid", "status": 200, "latency_ms": 1286.8, "client_ip": "127.0.0.1", "payload_size": 0}
+{"timestamp": "2026-01-06T09:52:10.489111", "method": "GET", "endpoint": "/delay/1", "status": 200, "latency_ms": 3032.35, "client_ip": "127.0.0.1", "payload_size": 0}
+{"timestamp": "2026-01-06T09:52:22.190786", "method": "GET", "endpoint": "/status/200", "status": 200, "latency_ms": 1382.61, "client_ip": "127.0.0.1", "payload_size": 0}
+{"timestamp": "2026-01-06T09:52:38.671743", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1352.21, "client_ip": "127.0.0.1", "payload_size": 0}
