@@ -1,0 +1,18 @@
+groups:
+  - name: phantomapi-alerts
+    rules:
+      - alert: High5xxErrorRate
+        expr: sum(rate(phantomapi_requests_total{status=~"5.."}[1m])) > 5
+        for: 10s
+        labels:
+          severity: critical
+        annotations:
+          summary: "PhantomAPI is receiving high 5xx errors"
+
+      - alert: LatencySpike
+        expr: histogram_quantile(0.95, sum(rate(phantomapi_request_latency_ms_bucket[1m])) by (le, endpoint)) > 1500
+        for: 10s
+        labels:
+          severity: warning
+        annotations:
+          summary: "95th percentile latency is above 1500ms"
