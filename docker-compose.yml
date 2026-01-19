@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  gateway:
+    build: .
+    container_name: phantomapi-gateway
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    command: uvicorn gateway:app --host 0.0.0.0 --port 8000 --reload
+
+  prometheus:
+    image: prom/prometheus
+    container_name: phantomapi-prom
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prom-data:/etc/prometheus
+    command: --config.file=/etc/prometheus/prometheus.yml

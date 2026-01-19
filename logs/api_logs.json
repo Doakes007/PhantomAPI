@@ -1,194 +1,965 @@
-{"timestamp": "2026-01-06T09:50:08.688131", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1602.21, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-06T09:50:10.182737", "method": "GET", "endpoint": "/favicon.ico", "status": 404, "latency_ms": 1454.55, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-06T09:51:15.825364", "method": "GET", "endpoint": "/ip", "status": 200, "latency_ms": 1362.45, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-06T09:51:38.357570", "method": "GET", "endpoint": "/uuid", "status": 200, "latency_ms": 1286.8, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-06T09:52:10.489111", "method": "GET", "endpoint": "/delay/1", "status": 200, "latency_ms": 3032.35, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-06T09:52:22.190786", "method": "GET", "endpoint": "/status/200", "status": 200, "latency_ms": 1382.61, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-06T09:52:38.671743", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1352.21, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-06T10:26:29.530796", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1721.72, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-06T10:26:53.306114", "method": "GET", "endpoint": "/delay/2", "status": 200, "latency_ms": 3745.13, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-06T10:27:03.205552", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 1220.48, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-06T10:27:21.286288", "method": "GET", "endpoint": "/anything-random-xyz", "status": 404, "latency_ms": 1307.48, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-06T10:27:36.519820", "method": "GET", "endpoint": "/bytes/15000", "status": 200, "latency_ms": 2041.73, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T10:39:05.807336", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1637.18, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T10:39:07.092582", "method": "GET", "endpoint": "/favicon.ico", "status": 404, "latency_ms": 1240.09, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T10:39:18.167262", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 1446.96, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T10:39:53.577526", "method": "GET", "endpoint": "/metrics", "status": 404, "latency_ms": 1686.13, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T10:42:30.826469", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.87, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T10:49:23.965308", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.08, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:23:52.814568", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.13, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:25:36.420779", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 0.54, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:26:36.420656", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.07, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:27:36.416618", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.06, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:28:36.413735", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 0.53, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:29:36.411352", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 0.53, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:30:36.409063", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.12, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:31:36.406620", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.56, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:32:36.403155", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 0.53, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:33:36.400208", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 0.53, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:41:56.312131", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:41:58.319059", "method": "GET", "endpoint": "/favicon.ico", "status": 404, "latency_ms": 1969.06, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:51:38.349296", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.05, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:51:43.349266", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.36, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:51:48.346775", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.56, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:51:53.348872", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.07, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:51:58.346528", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:52:03.350874", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.66, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:52:08.349804", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.1, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:52:13.345022", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.07, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:52:18.346661", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 0.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:52:23.348595", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.11, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:52:28.345693", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.09, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:52:33.345595", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 0.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:52:38.346904", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.51, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:52:43.344303", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:52:48.347286", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.04, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:52:53.343948", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.06, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:52:58.345102", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.04, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:53:03.347009", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.04, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:53:08.343745", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.35, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:53:13.345927", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 0.52, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:53:18.344211", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.63, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:53:23.345443", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.62, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:53:28.346049", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.59, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:53:33.346231", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:53:38.344328", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 0.54, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:53:43.345155", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.08, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:53:48.344603", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:53:53.343737", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 0.53, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:53:58.343447", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.5, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:54:03.347258", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.59, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:54:08.340666", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 0.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:54:13.344995", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.64, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:54:18.342973", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.06, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:54:23.346078", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 0.53, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:54:28.529627", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:54:29.952105", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1803.97, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:54:33.339988", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.07, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:54:38.342800", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.08, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:54:43.344464", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.03, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:54:48.341168", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.01, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:54:49.272632", "method": "GET", "endpoint": "/ip", "status": 200, "latency_ms": 1280.95, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:54:53.344014", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.2, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:54:58.339924", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.11, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:55:00.371501", "method": "GET", "endpoint": "/uuid", "status": 200, "latency_ms": 1356.38, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:55:03.340934", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 0.96, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:55:08.525463", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 4.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:55:09.945106", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 1839.92, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:55:13.106528", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 1412.77, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:55:13.341157", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.6, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:55:18.341199", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.62, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:55:23.340694", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.61, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:55:28.341846", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.52, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:55:33.342156", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:55:38.342694", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.68, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:55:43.337896", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.04, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:55:48.343393", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.58, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:55:53.338063", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.73, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:55:58.339972", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.62, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:56:03.340260", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:56:08.337826", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.22, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:56:13.340332", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.6, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:56:18.337865", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.6, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:56:23.340353", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.59, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:56:28.339114", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 5.33, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:56:33.338692", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 5.84, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:56:38.340303", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.11, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:56:43.339127", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.22, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:56:48.340814", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.58, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:56:53.338417", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.59, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:56:58.336523", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.74, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:57:03.338996", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.59, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:57:08.338605", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:57:13.334378", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.59, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:57:18.339913", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.11, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:57:23.336408", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.59, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:57:28.334733", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.59, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:57:33.336454", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.51, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:57:38.336948", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:57:43.335256", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.34, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:57:48.337241", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.51, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:57:53.333859", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.58, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:57:58.334816", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.63, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:58:03.335805", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.51, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:58:08.331595", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 0.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:58:13.334311", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.59, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:58:18.338170", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.06, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:58:23.335199", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.04, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:58:28.334193", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.13, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:58:33.335314", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.14, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:58:38.335083", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.71, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:58:43.334823", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.2, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:58:48.333957", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 11.16, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:58:53.323511", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 0.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:58:58.333208", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.03, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:59:03.334385", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:59:08.333782", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.61, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:59:13.333637", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.69, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:59:18.333340", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.68, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:59:23.331812", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.7, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:59:28.330179", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.01, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:59:33.367303", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 36.98, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:59:38.328220", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:59:43.331526", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.24, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:59:48.331783", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.64, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:59:53.329401", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.65, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T11:59:58.329356", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.39, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T12:00:03.330681", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.19, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T12:00:08.330024", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T12:00:13.331307", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.03, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T12:00:18.330580", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.09, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T12:00:23.331377", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.3, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T12:00:28.329972", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T12:00:33.331173", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.93, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T12:00:38.328850", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.02, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T12:00:43.330444", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 2.82, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T12:00:48.330101", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 3.17, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-07T12:00:53.328263", "method": "GET", "endpoint": "/metrics", "status": 200, "latency_ms": 1.04, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:24:27.404116", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1685.06, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:24:28.881403", "method": "GET", "endpoint": "/favicon.ico", "status": 404, "latency_ms": 1433.79, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:24:38.831041", "method": "GET", "endpoint": "/ip", "status": 200, "latency_ms": 2067.34, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:24:47.219291", "method": "GET", "endpoint": "/uuid", "status": 200, "latency_ms": 1258.84, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:24:55.182160", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 1348.36, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:25:20.156860", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1441.35, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:25:25.416738", "method": "GET", "endpoint": "/ip", "status": 200, "latency_ms": 2022.06, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:25:27.895734", "method": "GET", "endpoint": "/uuid", "status": 200, "latency_ms": 1491.08, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:25:29.978903", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 1476.48, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:25:32.226940", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1554.84, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:25:35.821489", "method": "GET", "endpoint": "/ip", "status": 200, "latency_ms": 1579.51, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:25:37.831857", "method": "GET", "endpoint": "/uuid", "status": 200, "latency_ms": 1439.85, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:25:39.965106", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 1405.59, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:25:48.431373", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1286.9, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:31:36.316414", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1404.1, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:31:45.132863", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 1321.58, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:31:46.978878", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1322.27, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:31:54.804521", "method": "GET", "endpoint": "/ip", "status": 200, "latency_ms": 1504.07, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:31:56.418370", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 1356.38, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:32:00.442330", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1985.84, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:32:02.679696", "method": "GET", "endpoint": "/ip", "status": 200, "latency_ms": 1742.42, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:32:06.889994", "method": "GET", "endpoint": "/ip", "status": 200, "latency_ms": 2657.0, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:32:08.421899", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 1408.37, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:32:14.381464", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 4946.8, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:32:15.201701", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 3820.89, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:32:23.796368", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 5449.13, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:32:27.696049", "method": "GET", "endpoint": "/ip", "status": 200, "latency_ms": 14053.51, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:32:30.504109", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 14439.49, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:35:07.264827", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 2513.12, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:35:08.154877", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 1408.98, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:35:10.484418", "method": "GET", "endpoint": "/ip", "status": 200, "latency_ms": 1691.64, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:35:32.529667", "method": "GET", "endpoint": "/ip", "status": 200, "latency_ms": 1240.55, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:35:34.278982", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 1340.82, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:35:36.185675", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1443.94, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:35:43.462958", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1594.81, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:35:45.128394", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 1338.9, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:35:46.832936", "method": "GET", "endpoint": "/ip", "status": 200, "latency_ms": 1319.25, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:36:00.832222", "method": "GET", "endpoint": "/ip", "status": 200, "latency_ms": 1432.04, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:36:12.681269", "method": "GET", "endpoint": "/ip", "status": 200, "latency_ms": 1320.18, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:36:26.094886", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 1371.37, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:36:35.638863", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1412.58, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:36:38.310146", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1308.56, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:36:41.035388", "method": "GET", "endpoint": "/get", "status": 200, "latency_ms": 1490.46, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:36:54.124586", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 1311.82, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:36:56.612914", "method": "GET", "endpoint": "/status/500", "status": 500, "latency_ms": 1443.77, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:37:09.473532", "method": "GET", "endpoint": "/ip", "status": 200, "latency_ms": 1352.82, "client_ip": "127.0.0.1", "payload_size": 0}
-{"timestamp": "2026-01-08T10:37:12.109041", "method": "GET", "endpoint": "/ip", "status": 200, "latency_ms": 1242.06, "client_ip": "127.0.0.1", "payload_size": 0}
+[
+  {
+    "timestamp": "2026-01-09T10:35:15.925531",
+    "method": "GET",
+    "endpoint": "/health",
+    "status": 404,
+    "latency_ms": 1550.38,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:35:17.487866",
+    "method": "GET",
+    "endpoint": "/favicon.ico",
+    "status": 404,
+    "latency_ms": 1520.48,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T05:06:07.967829",
+    "method": "GET",
+    "endpoint": "/health  \u2705",
+    "status": 404,
+    "latency_ms": 1885.4,
+    "client_ip": "172.18.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T05:06:12.783668",
+    "method": "GET",
+    "endpoint": "/health",
+    "status": 404,
+    "latency_ms": 1400.12,
+    "client_ip": "172.18.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:36:23.334817",
+    "method": "GET",
+    "endpoint": "/health",
+    "status": 404,
+    "latency_ms": 1571.98,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:38:44.497669",
+    "method": "GET",
+    "endpoint": "/health",
+    "status": 200,
+    "latency_ms": 2.0,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:38:58.864659",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1624.88,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:43:37.922872",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1862.88,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:43:46.000644",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1453.07,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:43:52.360070",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 2065.09,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:08.014456",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 2279.51,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:09.643052",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1606.61,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:11.183286",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1522.8,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:12.940112",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1739.58,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:14.503350",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1543.85,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:16.809613",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 2288.8,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:18.046149",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1215.44,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:19.194378",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1125.81,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:20.413260",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1198.77,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:21.592771",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1156.21,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:22.736641",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1114.45,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:24.199273",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1426.8,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:25.668192",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1433.18,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:27.683050",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1981.96,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:29.825922",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 2102.55,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:31.384843",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1520.66,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:32.995056",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1573.98,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:34.712853",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1683.65,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:36.686444",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1935.44,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:38.236339",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1514.72,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:39.770638",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1501.87,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:40.905201",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1103.88,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:42.022622",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1084.37,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:43.208030",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1153.7,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:44.472292",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1229.91,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:45.659405",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1151.6,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:46.849438",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1162.05,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:48.677997",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1796.98,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:49.860538",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1150.27,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:51.122908",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1230.38,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:52.465630",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1310.19,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:53.720077",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1223.45,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:55.633829",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1882.06,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:56.771654",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1107.94,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:58.093496",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1288.74,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:44:59.312798",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1188.48,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:45:00.459066",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1114.28,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:45:01.677482",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1184.97,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:45:03.100461",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1389.82,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:45:04.339184",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1207.82,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:45:05.574470",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1201.91,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:45:07.109080",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1500.68,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:45:08.339780",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1198.64,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:45:09.513992",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1141.56,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:45:10.716805",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1172.27,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:45:11.917975",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1167.42,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:45:13.052489",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1101.48,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:08.404685",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1946.03,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:10.048576",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1612.66,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:11.683589",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1605.73,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:13.204934",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1493.73,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:14.779979",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1541.36,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:17.519442",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 2704.71,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:19.101857",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1548.43,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:21.202255",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 2064.78,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:22.699154",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1457.66,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:24.268712",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1533.25,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:26.223388",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1921.49,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:27.759428",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1499.91,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:29.240916",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1445.48,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:30.797884",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1525.94,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:32.549188",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1714.95,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:34.077924",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1495.4,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:35.632611",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1517.36,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:37.204089",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1534.68,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:39.220879",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1974.17,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:41.278508",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 2020.01,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:43.819885",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 2503.65,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:45.402051",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1546.41,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:47.216464",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1779.21,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:49.023061",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1770.35,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:50.690352",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1633.85,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:52.239447",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1514.96,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:54.081212",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1788.79,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:55.666014",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1548.77,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:57.211699",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1508.43,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:56:58.795907",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1549.41,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:00.737643",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1908.41,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:01.958677",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1181.93,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:04.110632",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 2117.8,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:05.661780",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1513.29,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:07.287934",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 502,
+    "latency_ms": 1586.88,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:09.744010",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 2417.65,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:11.268997",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1499.89,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:12.765312",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1470.87,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:14.658923",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1867.11,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:16.209590",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1525.77,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:18.124976",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1889.3,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:20.077739",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1924.9,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:21.716385",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1609.33,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:23.296501",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1551.74,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:25.177872",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1853.61,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:28.107271",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 2901.88,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:29.618864",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1486.48,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:31.168201",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1523.25,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:32.790206",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1595.64,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  },
+  {
+    "timestamp": "2026-01-09T10:57:34.416998",
+    "method": "GET",
+    "endpoint": "/get",
+    "status": 200,
+    "latency_ms": 1601.76,
+    "client_ip": "127.0.0.1",
+    "payload_size": 0
+  }
+]

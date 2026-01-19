@@ -1,11 +1,33 @@
-# PhantomAPI — AI-Driven API Anomaly Detection & Auto-Healing Gateway
+# PhantomAPI – Observable API Gateway
 
-Problem:
-Traditional API gateways only route requests. They do NOT detect anomalies, predict failures, or auto-heal.
-PhantomAPI introduces AI-based anomaly detection + self-healing to secure and stabilize API infrastructure.
+PhantomAPI is a FastAPI-based API Gateway with production-grade observability using Prometheus and Grafana.
 
-Day 1 Progress:
-- Defined problem statement
-- Designed High Level Architecture
-- Bootstrapped proxy gateway
-- Initialized Git repo
+## Features
+- API Gateway built with FastAPI
+- Request proxying with latency measurement
+- Prometheus metrics for request count & latency
+- Real-time Grafana dashboards
+- Endpoint-level monitoring
+
+## Architecture
+Client → FastAPI Gateway → Upstream API  
+                      ↳ Prometheus → Grafana
+
+## Metrics Exposed
+- `api_requests_total`
+- `api_request_latency_ms_bucket`
+- `api_request_latency_ms`
+
+## Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+## Tech Stack
+- FastAPI
+- Prometheus
+- Grafana
+- Python
+- HTTPX
+
+## How to Run
+```bash
+uvicorn gateway:app --reload --port 8001
