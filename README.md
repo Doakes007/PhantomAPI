@@ -19,8 +19,9 @@ Client → FastAPI Gateway → Upstream API
 - `api_request_latency_ms`
 
 ## Dashboard
-![Dashboard](screenshots/dashboard.png)
-
+![alt text](<Screenshot 2026-01-19 121927-2.png>) 
+![alt text](<Screenshot 2026-01-19 120513-1.png>) 
+![alt text](<Screenshot 2026-01-19 121852-1.png>)
 ## Tech Stack
 - FastAPI
 - Prometheus
@@ -31,3 +32,11 @@ Client → FastAPI Gateway → Upstream API
 ## How to Run
 ```bash
 uvicorn gateway:app --reload --port 8001
+
+## Prometheus
+prometheus --config.file=prometheus.yml
+
+
+## Grafana
+
+http://localhost:3000
