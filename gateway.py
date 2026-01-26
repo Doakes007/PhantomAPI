@@ -6,6 +6,9 @@ import asyncio
 from collections import deque
 from prometheus_client import Counter, Histogram, Gauge, generate_latest
 
+from features.extractor import FeatureExtractor
+
+
 app = FastAPI(title="PhantomAPI Gateway")
 
 # -------------------- Config --------------------
@@ -92,6 +95,20 @@ CIRCUIT_SHORT_CIRCUITED = Counter(
 
 CIRCUIT_STATE.set(0)
 
+# -------------------- Phase 3.1: Feature Extractor --------------------
+feature_extractor = FeatureExtractor(
+    request_total=REQUEST_COUNT,
+    request_failures=UPSTREAM_5XX_ERRORS,
+    request_timeouts=UPSTREAM_TIMEOUTS,
+    request_retries=UPSTREAM_RETRIES,
+    circuit_transitions=CIRCUIT_OPEN_TOTAL,
+    latency_histogram=LATENCY,
+)
+
+@app.on_event("startup")
+async def start_feature_engineering():
+    asyncio.create_task(feature_extractor.start())
+
 # -------------------- Circuit Helper --------------------
 def maybe_open_circuit():
     global circuit_state, circuit_opened_at, half_open_probe_in_flight
@@ -114,11 +131,16 @@ async def health():
 async def metrics():
     return PlainTextResponse(generate_latest())
 
+# ---- DEBUG (Phase 3.1 Validation) ----
+@app.get("/debug/features")
+async def debug_features():
+    return feature_extractor.compute_features()
+
 @app.api_route("/{path:path}", methods=["GET", "POST", "PUT", "DELETE", "HEAD"])
 async def proxy(path: str, request: Request):
     global circuit_state, circuit_opened_at, half_open_probe_in_flight
 
-    if path in ["health", "metrics"]:
+    if path in ["health", "metrics", "debug"]:
         return Response(status_code=404)
 
     now = time.time()
