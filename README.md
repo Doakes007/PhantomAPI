@@ -40,3 +40,13 @@ prometheus --config.file=prometheus.yml
 ## Grafana
 
 http://localhost:3000
+
+
+## Project Status
+Phase 3 complete:
+- Reactive + predictive circuit breaking
+- ML-based failure risk prediction
+- Adaptive thresholds
+- Soft degradation & graceful overload
+
+Further phases intentionally deferred.
