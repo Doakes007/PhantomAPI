@@ -9,6 +9,7 @@ from prometheus_client import Counter, Histogram, Gauge, generate_latest
 from features.extractor import FeatureExtractor
 from features.logger import FeatureLogger
 from features.predictor import FailureRiskPredictor
+from features.adaptive import AdaptiveThresholdController
 
 
 app = FastAPI(title="PhantomAPI Gateway")
@@ -33,12 +34,17 @@ circuit_state = "CLOSED"   # CLOSED | OPEN | HALF_OPEN
 circuit_opened_at = None
 half_open_probe_in_flight = False
 
-# -------------------- Phase 3.3 Predictive Config --------------------
-PREDICTIVE_RISK_THRESHOLD = 0.7
-PREDICTIVE_CHECK_INTERVAL = 5    # seconds
-PREDICTIVE_COOLDOWN = 30         # seconds
-
+# -------------------- Predictive Config --------------------
+PREDICTIVE_CHECK_INTERVAL = 5
+PREDICTIVE_COOLDOWN = 30
 last_predictive_action = 0
+
+# -------------------- Phase 3.5 Soft Mitigation --------------------
+SOFT_RISK_THRESHOLD = 0.45
+HARD_RISK_THRESHOLD = 0.7
+
+DEGRADED_TIMEOUT_SECONDS = 1.0
+DEGRADED_MAX_RETRIES = 0
 
 # -------------------- Metrics --------------------
 REQUEST_COUNT = Counter(
@@ -104,7 +110,7 @@ CIRCUIT_SHORT_CIRCUITED = Counter(
 
 CIRCUIT_STATE.set(0)
 
-# -------------------- Phase 3.1: Feature Extractor --------------------
+# -------------------- Feature Extractor --------------------
 feature_extractor = FeatureExtractor(
     request_total=REQUEST_COUNT,
     request_failures=UPSTREAM_5XX_ERRORS,
@@ -114,16 +120,17 @@ feature_extractor = FeatureExtractor(
     latency_histogram=LATENCY,
 )
 
-# -------------------- Phase 3.2.1: Feature Logger --------------------
+# -------------------- Feature Logger --------------------
 feature_logger = FeatureLogger(
     extractor=feature_extractor,
     output_path="dataset/phase3_features.csv",
 )
 
-# -------------------- Phase 3.3: Failure Risk Predictor --------------------
+# -------------------- ML + Adaptive Threshold --------------------
 risk_predictor = FailureRiskPredictor(
     model_path="experiments/models/failure_risk_model.joblib"
 )
+adaptive_controller = AdaptiveThresholdController()
 
 # -------------------- Startup --------------------
 @app.on_event("startup")
@@ -139,7 +146,6 @@ async def predictive_circuit_controller():
     while True:
         await asyncio.sleep(PREDICTIVE_CHECK_INTERVAL)
 
-        # ML is advisory only
         if circuit_state != "CLOSED":
             continue
 
@@ -149,15 +155,24 @@ async def predictive_circuit_controller():
 
         features = feature_extractor.compute_features()
         risk = risk_predictor.predict_risk(features)
+        threshold = adaptive_controller.compute_threshold(features)
 
-        if risk >= PREDICTIVE_RISK_THRESHOLD:
+        if risk >= threshold:
             circuit_state = "OPEN"
             circuit_opened_at = time.time()
             CIRCUIT_STATE.set(1)
             CIRCUIT_OPEN_TOTAL.inc()
             last_predictive_action = now
 
-# -------------------- Circuit Helper --------------------
+# -------------------- Helpers --------------------
+def request_mode_from_risk(risk: float):
+    if risk >= HARD_RISK_THRESHOLD:
+        return "HARD_FAIL"
+    elif risk >= SOFT_RISK_THRESHOLD:
+        return "DEGRADED"
+    return "NORMAL"
+
+
 def maybe_open_circuit():
     global circuit_state, circuit_opened_at, half_open_probe_in_flight
 
@@ -179,7 +194,6 @@ async def health():
 async def metrics():
     return PlainTextResponse(generate_latest())
 
-# ---- DEBUG ----
 @app.get("/debug/features")
 async def debug_features():
     return feature_extractor.compute_features()
@@ -187,11 +201,24 @@ async def debug_features():
 @app.get("/debug/risk")
 async def debug_risk():
     features = feature_extractor.compute_features()
+    risk = risk_predictor.predict_risk(features)
     return {
-        "risk_score": risk_predictor.predict_risk(features),
+        "risk": risk,
+        "adaptive_threshold": adaptive_controller.compute_threshold(features),
         "features": features,
     }
 
+@app.get("/debug/mode")
+async def debug_mode():
+    features = feature_extractor.compute_features()
+    risk = risk_predictor.predict_risk(features)
+    return {
+        "risk": risk,
+        "mode": request_mode_from_risk(risk),
+        "features": features,
+    }
+
+# -------------------- Proxy --------------------
 @app.api_route("/{path:path}", methods=["GET", "POST", "PUT", "DELETE", "HEAD"])
 async def proxy(path: str, request: Request):
     global circuit_state, circuit_opened_at, half_open_probe_in_flight
@@ -201,7 +228,7 @@ async def proxy(path: str, request: Request):
 
     now = time.time()
 
-    # -------- Circuit State Handling --------
+    # ----- Circuit enforcement -----
     if circuit_state == "OPEN":
         if now - circuit_opened_at >= CIRCUIT_OPEN_DURATION_SECONDS:
             circuit_state = "HALF_OPEN"
@@ -214,9 +241,24 @@ async def proxy(path: str, request: Request):
     if circuit_state == "HALF_OPEN":
         if half_open_probe_in_flight:
             CIRCUIT_SHORT_CIRCUITED.inc()
-            REQUEST_COUNT.labels(f"/{path}", request.method, 503).inc()
             return Response(b"Half-open probe in progress", status_code=503)
         half_open_probe_in_flight = True
+
+    # ----- Phase 3.5 Risk-based behavior -----
+    features = feature_extractor.compute_features()
+    risk = risk_predictor.predict_risk(features)
+    mode = request_mode_from_risk(risk)
+
+    if mode == "HARD_FAIL":
+        CIRCUIT_SHORT_CIRCUITED.inc()
+        return Response(b"Service temporarily degraded", status_code=429)
+
+    timeout = UPSTREAM_TIMEOUT_SECONDS
+    max_retries = MAX_RETRIES
+
+    if mode == "DEGRADED":
+        timeout = DEGRADED_TIMEOUT_SECONDS
+        max_retries = DEGRADED_MAX_RETRIES
 
     url = f"{SERVICE_URL}/{path}"
     method = request.method
@@ -228,18 +270,16 @@ async def proxy(path: str, request: Request):
 
     while True:
         try:
-            async with httpx.AsyncClient(timeout=UPSTREAM_TIMEOUT_SECONDS) as client:
+            async with httpx.AsyncClient(timeout=timeout) as client:
                 resp = await client.request(method, url, headers=headers, content=body)
 
             LATENCY.labels(f"/{path}").observe((time.time() - start) * 1000)
             REQUEST_COUNT.labels(f"/{path}", method, resp.status_code).inc()
 
             is_failure = 500 <= resp.status_code < 600
-
             failure_window.append(is_failure)
             CIRCUIT_REQUESTS_TRACKED.inc()
 
-            # ----- HALF_OPEN success -----
             if circuit_state == "HALF_OPEN" and not is_failure:
                 circuit_state = "CLOSED"
                 half_open_probe_in_flight = False
@@ -247,15 +287,11 @@ async def proxy(path: str, request: Request):
                 failure_window.clear()
                 CIRCUIT_STATE.set(0)
 
-            if failure_window:
-                ratio = sum(failure_window) / len(failure_window)
-                CIRCUIT_FAILURE_RATIO.observe(ratio)
-
             if is_failure:
                 UPSTREAM_5XX_ERRORS.labels(f"/{path}", method).inc()
                 maybe_open_circuit()
 
-                if method in IDEMPOTENT_METHODS and attempts < MAX_RETRIES:
+                if method in IDEMPOTENT_METHODS and attempts < max_retries:
                     attempts += 1
                     UPSTREAM_RETRIES.labels(f"/{path}", method).inc()
                     await asyncio.sleep(RETRY_BACKOFF_SECONDS * attempts)
@@ -264,35 +300,20 @@ async def proxy(path: str, request: Request):
             return Response(
                 content=resp.content,
                 status_code=resp.status_code,
-                media_type=resp.headers.get("content-type")
+                media_type=resp.headers.get("content-type"),
             )
 
         except httpx.TimeoutException:
             UPSTREAM_TIMEOUTS.labels(f"/{path}", method).inc()
-
             failure_window.append(True)
             CIRCUIT_REQUESTS_TRACKED.inc()
-
-            if failure_window:
-                ratio = sum(failure_window) / len(failure_window)
-                CIRCUIT_FAILURE_RATIO.observe(ratio)
-
             maybe_open_circuit()
 
-            if method in IDEMPOTENT_METHODS and attempts < MAX_RETRIES:
+            if method in IDEMPOTENT_METHODS and attempts < max_retries:
                 attempts += 1
                 UPSTREAM_RETRIES.labels(f"/{path}", method).inc()
                 await asyncio.sleep(RETRY_BACKOFF_SECONDS * attempts)
                 continue
 
             UPSTREAM_RETRY_EXHAUSTED.labels(f"/{path}", method).inc()
-
-            if circuit_state == "HALF_OPEN":
-                circuit_state = "OPEN"
-                half_open_probe_in_flight = False
-                circuit_opened_at = time.time()
-                CIRCUIT_STATE.set(1)
-                CIRCUIT_OPEN_TOTAL.inc()
-
-            REQUEST_COUNT.labels(f"/{path}", method, 504).inc()
             return Response(b"Upstream timeout", status_code=504)
