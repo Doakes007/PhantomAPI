@@ -20,6 +20,7 @@ class FeatureExtractor:
         window_size=30,
         sample_interval=1,
     ):
+        # Metric names (string-based, registry-safe)
         self.request_total = request_total._name
         self.request_failures = request_failures._name
         self.request_timeouts = request_timeouts._name
@@ -30,6 +31,7 @@ class FeatureExtractor:
         self.window_size = window_size
         self.sample_interval = sample_interval
 
+        # Sliding windows
         self.total = deque(maxlen=window_size)
         self.failures = deque(maxlen=window_size)
         self.timeouts = deque(maxlen=window_size)
@@ -37,7 +39,11 @@ class FeatureExtractor:
         self.latency_p95 = deque(maxlen=window_size)
         self.circuit_flaps = deque(maxlen=window_size)
 
+        # Delta tracking
         self._last = {}
+
+        # ✅ CRITICAL: cache last valid feature vector
+        self._last_features = {}
 
     async def start(self):
         while True:
@@ -64,9 +70,11 @@ class FeatureExtractor:
         if not buckets:
             return 0.0
 
-        buckets.sort(key=lambda x: float("inf") if x[0] == "+Inf" else float(x[0]))
-        total = buckets[-1][1]
+        buckets.sort(
+            key=lambda x: float("inf") if x[0] == "+Inf" else float(x[0])
+        )
 
+        total = buckets[-1][1]
         if total == 0:
             return 0.0
 
@@ -104,23 +112,32 @@ class FeatureExtractor:
 
     # ---------- Feature computation ----------
     def compute_features(self) -> dict:
+        # ✅ Never return empty features after warm-up
         if sum(self.total) == 0:
-            return {}
+            return self._last_features
 
         failure_ratio = sum(self.failures) / sum(self.total)
         timeout_rate = sum(self.timeouts) / sum(self.total)
         retry_rate = sum(self.retries) / sum(self.total)
 
-        return {
+        features = {
             "failure_ratio": round(failure_ratio, 4),
             "failure_ratio_slope": round(self._slope(self.failures), 4),
-            "p95_latency": round(self.latency_p95[-1], 2) if self.latency_p95 else 0.0,
+            "p95_latency": round(self.latency_p95[-1], 2)
+            if self.latency_p95
+            else 0.0,
             "latency_slope": round(self._slope(self.latency_p95), 2),
             "retry_rate": round(retry_rate, 4),
             "timeout_rate": round(timeout_rate, 4),
             "error_burstiness": round(self._burstiness(self.failures), 2),
-            "circuit_flap_rate": round(sum(self.circuit_flaps) / self.window_size, 4),
+            "circuit_flap_rate": round(
+                sum(self.circuit_flaps) / self.window_size, 4
+            ),
         }
+
+        # ✅ Cache last valid snapshot
+        self._last_features = features
+        return features
 
     def _slope(self, values):
         if len(values) < 2:

@@ -7,6 +7,8 @@ from collections import deque
 from prometheus_client import Counter, Histogram, Gauge, generate_latest
 
 from features.extractor import FeatureExtractor
+from features.logger import FeatureLogger
+from features.predictor import FailureRiskPredictor
 
 
 app = FastAPI(title="PhantomAPI Gateway")
@@ -30,6 +32,13 @@ failure_window = deque(maxlen=CIRCUIT_WINDOW_SIZE)
 circuit_state = "CLOSED"   # CLOSED | OPEN | HALF_OPEN
 circuit_opened_at = None
 half_open_probe_in_flight = False
+
+# -------------------- Phase 3.3 Predictive Config --------------------
+PREDICTIVE_RISK_THRESHOLD = 0.7
+PREDICTIVE_CHECK_INTERVAL = 5    # seconds
+PREDICTIVE_COOLDOWN = 30         # seconds
+
+last_predictive_action = 0
 
 # -------------------- Metrics --------------------
 REQUEST_COUNT = Counter(
@@ -105,9 +114,48 @@ feature_extractor = FeatureExtractor(
     latency_histogram=LATENCY,
 )
 
+# -------------------- Phase 3.2.1: Feature Logger --------------------
+feature_logger = FeatureLogger(
+    extractor=feature_extractor,
+    output_path="dataset/phase3_features.csv",
+)
+
+# -------------------- Phase 3.3: Failure Risk Predictor --------------------
+risk_predictor = FailureRiskPredictor(
+    model_path="experiments/models/failure_risk_model.joblib"
+)
+
+# -------------------- Startup --------------------
 @app.on_event("startup")
-async def start_feature_engineering():
+async def start_background_tasks():
     asyncio.create_task(feature_extractor.start())
+    asyncio.create_task(feature_logger.start())
+    asyncio.create_task(predictive_circuit_controller())
+
+# -------------------- Predictive Circuit Controller --------------------
+async def predictive_circuit_controller():
+    global circuit_state, circuit_opened_at, last_predictive_action
+
+    while True:
+        await asyncio.sleep(PREDICTIVE_CHECK_INTERVAL)
+
+        # ML is advisory only
+        if circuit_state != "CLOSED":
+            continue
+
+        now = time.time()
+        if now - last_predictive_action < PREDICTIVE_COOLDOWN:
+            continue
+
+        features = feature_extractor.compute_features()
+        risk = risk_predictor.predict_risk(features)
+
+        if risk >= PREDICTIVE_RISK_THRESHOLD:
+            circuit_state = "OPEN"
+            circuit_opened_at = time.time()
+            CIRCUIT_STATE.set(1)
+            CIRCUIT_OPEN_TOTAL.inc()
+            last_predictive_action = now
 
 # -------------------- Circuit Helper --------------------
 def maybe_open_circuit():
@@ -131,10 +179,18 @@ async def health():
 async def metrics():
     return PlainTextResponse(generate_latest())
 
-# ---- DEBUG (Phase 3.1 Validation) ----
+# ---- DEBUG ----
 @app.get("/debug/features")
 async def debug_features():
     return feature_extractor.compute_features()
+
+@app.get("/debug/risk")
+async def debug_risk():
+    features = feature_extractor.compute_features()
+    return {
+        "risk_score": risk_predictor.predict_risk(features),
+        "features": features,
+    }
 
 @app.api_route("/{path:path}", methods=["GET", "POST", "PUT", "DELETE", "HEAD"])
 async def proxy(path: str, request: Request):
